@@ -6,5 +6,9 @@
 </head>
 <body>
 	<h1>Hi this is mail from command line</h1>
+	<p>	Argument: {{$email}}</p>
+	<p>options :{{$queueName}}</p>
+	<p>Name :{{$name}}</p>
+
 </body>
 </html>

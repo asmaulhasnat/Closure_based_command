@@ -14,8 +14,13 @@ class sendmail extends Mailable {
 	 *
 	 * @return void
 	 */
-	public function __construct() {
-		//
+	private $userId;
+	private $queueName;
+	private $name;
+	public function __construct($userId, $queueName, $name) {
+		$this->userId = $userId;
+		$this->queueName = $queueName;
+		$this->name = $name;
 	}
 
 	/**
@@ -24,6 +29,9 @@ class sendmail extends Mailable {
 	 * @return $this
 	 */
 	public function build() {
-		return $this->view('email');
+		return $this->view('email')->with(['email' => $this->userId,
+			'queueName' => $this->queueName,
+			'name' => $this->name,
+		]);
 	}
 }

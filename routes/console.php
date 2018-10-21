@@ -20,5 +20,5 @@ Artisan::command('inspire', function () {
 
 Artisan::command('sendmail', function () {
 	Mail::to('ahsweet92@gmail.com')->send(new sendmail());
-	$this->comment('mail send using closure based command');
+	$this->warn('mail send using closure based command');
 })->describe('mail send using Closure based command');
